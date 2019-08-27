@@ -4,14 +4,13 @@ Rails.application.routes.draw do
   post '/tasks' => 'tasks#create'
   get '/tasks/:id' => 'tasks#show'
   get 'tasks/:id/edit' => 'tasks#edit'
-  get 'tasks/:id/update' => 'tasks#update'
-  get 'tasks/:id' => 'tasks#destroy'
+  patch 'tasks/:id' => 'tasks#update'
+  delete 'tasks/:id' => 'tasks#destroy'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
-  get '/login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  get '/logout' => 'sessions#delete'
-
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  get "/logout" => "sessions#destroy"
 end
